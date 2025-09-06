@@ -10,7 +10,7 @@ import Image from "next/image"
 export default function ProductsSection() {
   const { t } = useLanguage()
 
-  const phoneNumbers = ["9970663388", "8830490094"]
+  const phoneNumbers = ["+919356912160", "+919921242812"]
 
   const handleOrderClick = () => {
     const randomPhone = phoneNumbers[Math.floor(Math.random() * phoneNumbers.length)]
@@ -19,7 +19,8 @@ export default function ProductsSection() {
 
   const handleEnquiryClick = (productName: string, price: string) => {
     const message = `Hi! I'm interested in ${productName} priced at ${price}. Please provide more details.`
-    const whatsappUrl = `https://wa.me/919970663388?text=${encodeURIComponent(message)}`
+    const randomPhone = phoneNumbers[Math.floor(Math.random() * phoneNumbers.length)]
+    const whatsappUrl = `https://wa.me/${randomPhone}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
   }
 
